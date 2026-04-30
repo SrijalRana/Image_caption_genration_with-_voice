@@ -1,0 +1,21 @@
+# datasets
+flickr_testing/
+
+# environment
+venv/
+__pycache__/
+
+# images
+*.jpg
+*.png
+
+# model
+*.h5
+*.keras
+
+# audio
+*.mp3
+
+
+# logs
+*.log
