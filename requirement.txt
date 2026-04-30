@@ -1,5 +1,8 @@
 streamlit
 tensorflow
-pillow
 numpy
+pillow
 gtts
+transformers
+nltk
+gdown

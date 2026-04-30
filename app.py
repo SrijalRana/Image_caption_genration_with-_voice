@@ -9,6 +9,7 @@ from tensorflow.keras.applications.efficientnet import EfficientNetB0, preproces
 from beam_search import beam_search
 from gtts import gTTS
 import tempfile
+import os
 
 # BLIP
 
@@ -22,9 +23,13 @@ nltk.download('punkt')
 
 # ---------------- LOAD MODEL ----------------
 
-@st.cache_resource
-@st.cache_resource
+
 def load_all():
+    # 🔽 Download model from Google Drive (only once)
+    if not os.path.exists("best_model.keras"):
+        url = "https://drive.google.com/file/d/1SSHilapxY0OhUjeamkpgm3Caj5O7dEkR/view?usp=sharing"
+        gdown.download(url, "best_model.keras", quiet=False)
+
     model = load_model("best_model.keras")
 
     with open("tokenizer.pkl", "rb") as f:
@@ -33,7 +38,6 @@ def load_all():
     with open("config.json") as f:
         config = json.load(f)
 
-    # ✅ ADD THIS
     base_model = EfficientNetB0(weights='imagenet', include_top=False)
 
     return model, tokenizer, config, base_model
