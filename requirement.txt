@@ -1,8 +1,0 @@
-streamlit
-tensorflow
-numpy
-pillow
-gtts
-transformers
-nltk
-gdown

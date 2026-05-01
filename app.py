@@ -182,8 +182,7 @@ def text_to_speech(text):
     return temp_file.name
 
 # ---------------- STREAMLIT UI ----------------
-
-st.title("🖼️ Image Caption Generator with Voice")
+st.title("🖼️ Voice Based Image Captioning")
 
 st.info("NOTE:- Upload image from Flickr30k dataset to see BLEU score")
 
